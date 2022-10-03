@@ -1,0 +1,2 @@
+DATABASE_URL=postgresql://avnadmin:AVNS_yAR-6nHqdsPPZUAidis@public-demo-postgres-sa-demo.aivencloud.com:24947/defaultdb?sslmode=require
+PRISMA_DML_PATH=/Users/chrisg/StudioProjects/slack_stack/prisma/schema.prisma

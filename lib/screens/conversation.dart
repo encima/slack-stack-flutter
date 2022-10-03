@@ -8,6 +8,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:slack_stack/components/chat_bubble.dart';
 import 'package:uuid/uuid.dart';
 
+import '../src/generated/prisma_client.dart';
+
 class Author {
   String username;
 
@@ -26,6 +28,8 @@ class Message {
       required this.created,
       required this.from});
 }
+
+final PrismaClient prisma = PrismaClient();
 
 class ConvoPage extends StatefulWidget {
   static String tag = 'conversations';
@@ -132,15 +136,16 @@ class _ConvoPageState extends State<ConvoPage> {
   }
 
   void _loadMessages() async {
-    final response = await rootBundle.loadString('assets/messages.json');
-    final messages = (jsonDecode(response) as List);
+    final msgs = await prisma.message.findMany(
+      orderBy: [
+        const MessageOrderByWithRelationInput(createdAt: SortOrder.desc)
+      ],
+    );
+
     setState(() {
-      for (var m in messages) {
+      for (var m in msgs) {
         _messages.add(Message(
-            id: m['id'],
-            content: m['content'],
-            created: DateTime.parse(m['created']),
-            from: m['from']));
+            id: m.id, content: m.text, created: m.createdAt, from: m.authorId));
       }
       _messages.sort((a, b) => a.created.compareTo(b.created));
     });
