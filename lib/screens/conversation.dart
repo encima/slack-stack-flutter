@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
+import 'package:redis/redis.dart';
 import 'package:slack_stack/components/chat_bubble.dart';
 import 'package:uuid/uuid.dart';
 
@@ -47,6 +48,12 @@ class _ConvoPageState extends State<ConvoPage> {
   void initState() {
     super.initState();
     _loadMessages();
+
+    final conn = RedisConnection();
+    conn.connect('localhost', 6379).then((Command command) {
+      command.send_object(["SET", "key", "0"]).then(
+          (var response) => print(response));
+    });
   }
 
   @override
