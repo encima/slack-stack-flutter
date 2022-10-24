@@ -2,21 +2,19 @@
 
 Scaling your startup with the power of Open Source
 
-## Getting Started
+## Step Two
 
-This project is a starting point for a Flutter application.
+You did it! You have made your app. But you notice some issues:
 
-A few resources to get you started if this is your first Flutter project:
+- People cannot chat with it
+- None of the chat messages are saved
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+It sounds like you need to store these messages. Maybe somewhere centralised so that multiple users can run their app and query for messages.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This sounds like a job for... PostgreSQL!
 
 ## Connecting to PostgreSQL
 
 1. `flutter pub run orm generate`
 2. `flutter pub run build_runner build --delete-conflicting-outputs`
-3. Add your Service URI to the `DATABASE_URL` in  the `.prismarc` file
+3. Add your Service URI to the `DATABASE_URL` in the `.prismarc` file
