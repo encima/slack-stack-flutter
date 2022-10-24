@@ -2,15 +2,32 @@
 
 Scaling your startup with the power of Open Source
 
-## Getting Started
+## The Scenario
 
-This project is a starting point for a Flutter application.
+You have an idea to improve Slack, Teams and all those other tools. But you want to do it your way. On your terms.
 
-A few resources to get you started if this is your first Flutter project:
+You want to start with the basics and only add complexity to your architecture when it is absolutely vital.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+You also want to use only Open Source Software, not just because you believe in it but also because it lets you run it on your laptop and the cloud
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+You start with what you know.
+
+You are a mobile developer but you know the desktop is also where work is done. So you choose Flutter to make a productivity chat app that runs on all platforms
+
+Let's begin
+
+## How to use
+
+This repository is broken up into sections. Each section/task is within a branch
+
+In order to start, simply run:
+
+`git checkout step-two`
+
+and read the README. It will give you the context for the scenario and the tasks to complete.
+
+Once you are done, run:
+
+`git checkout step-three` and continue!
+
+If you get stuck, you can also move directly to step-two and see the steps that were done to complete the tasks!
