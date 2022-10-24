@@ -2,21 +2,20 @@
 
 Scaling your startup with the power of Open Source
 
-## Getting Started
+## Step Three
 
-This project is a starting point for a Flutter application.
+Excellent! You have messages, you have a databae, you have an app.
 
-A few resources to get you started if this is your first Flutter project:
+Are you ready to launch? You think so, so you try it with some friends.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+They give you some feedback. You snatch your device back and go to the gym to let out your frustration. What do they know?
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Alot, it seems. They are your target userbase and current apps have given them some expectations.
 
-## Connecting to PostgreSQL
+Right now, your app can send and receive messages. It can also save them in your PostgreSQL database.
 
-1. `flutter pub run orm generate`
-2. `flutter pub run build_runner build --delete-conflicting-outputs`
-3. Add your Service URI to the `DATABASE_URL` in  the `.prismarc` file
+But it is all manual. The user has to close and then reopen the app to refresh (or they can swipe to refresh when you actually get a chance to implement it)
+
+You need something to allow real-time communication. A colleague recommends Apache Kafka but you do not have time to learn about clusters and topics and brokers, you are hustling!
+
+What other services allow for a Publish-Subscribe model to be implemented easily?
